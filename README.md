@@ -10,41 +10,6 @@
         <stop offset="100%" stop-color="#ff6b6b"/>
       </linearGradient>
 
-      <!-- mask that moves left->right revealing the text (typing effect) -->
-      <mask id="reveal">
-        <rect x="0" y="0" width="820" height="140" fill="black" />
-        <!-- white rect will reveal the text as it slides - animate x to create reveal -->
-        <rect id="maskRect" x="-10" y="0" width="0" height="140" fill="white">
-          <animate attributeName="width" from="0" to="840" dur="3.8s" begin="0s" repeatCount="indefinite" />
-        </rect>
-      </mask>
-
-      <!-- soft glow filter -->
-      <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-        <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
-        <feMerge>
-          <feMergeNode in="coloredBlur"/>
-          <feMergeNode in="SourceGraphic"/>
-        </feMerge>
-      </filter>
-    </defs>
-
-    <!-- dark rounded rect backdrop for dark-mode friendliness -->
-    <rect rx="12" ry="12" x="0" y="0" width="820" height="140" fill="#0b1220" />
-    <!-- text with gradient fill -->
-    <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"
-          font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif"
-          font-size="44" font-weight="700"
-          fill="url(#g)" filter="url(#glow)" mask="url(#reveal)">
-      Digital Banking ETL
-    </text>
-
-    <!-- subtitle -->
-    <text x="50%" y="82%" dominant-baseline="middle" text-anchor="middle"
-          font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif"
-          font-size="13" fill="#9aa6b2" opacity="0.95">
-      Cyntexa Project Evaluation — Medallion ETL on Databricks (Bronze → Silver → Gold)
-    </text>
   </svg>
 </div>
 
